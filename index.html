@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubra pacotes personalizados para imobiliárias, concessionárias e escolas de condução. Encontre a solução ideal para o seu negócio!">
+    <meta name="keywords" content="pacotes, marketing, imobiliárias, concessionárias, escolas de condução">
+    <meta property="og:title" content="Pacotes Personalizados para Seu Negócio">
+    <meta property="og:description" content="Escolha o pacote ideal e alavanque os resultados do seu negócio com estratégias eficazes.">
+    <meta property="og:image" content="og_image.jpg">
+    <title>Pacotes de Serviços</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #e0e0e0;
+            background: #1a0b2e;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #1a0b2e, #2c124b);
+            color: #fff;
+            text-align: center;
+            padding: 6rem 1rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(60deg, #ff6a00, #1a0b2e, #00c3ff);
+            animation: gradientAnimation 10s infinite linear;
+            z-index: -2;
+            opacity: 0.2;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 15%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+            border-radius: 50%;
+            filter: blur(50px);
+            animation: float 6s infinite ease-in-out alternate;
+            z-index: -1;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #ff6a00, #00c3ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+            color: #e6e6e6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #00c3ff, #ff007e);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 105, 135, 0.6);
+        }
+
+        .packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            padding: 4rem 1rem;
+            background: #24134b;
+            color: #fff;
+        }
+
+        .package-card {
+            background: linear-gradient(135deg, #2d1152, #3e1b74);
+            border: 1px solid #4b288a;
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+            opacity: 0;
+            border-radius: 15px;
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 105, 135, 0.5);
+            background: linear-gradient(135deg, #45207d, #5433ad);
+        }
+
+        .package-card:hover::after {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        .package-card h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ff6a00;
+            text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .package-card p {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: #e3cfff;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .features li {
+            margin: 0.8rem 0;
+            font-size: 1.2rem;
+            color: #d4d4d4;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #24134b;
+            color: #bbb;
+        }
+
+        footer a {
+            color: #ff6a00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(30px) scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h2>Transforme Seu Negócio</h2>
+        <p>Pacotes projetados para liderar o mercado com tecnologia e visão.</p>
+        <a href="#" class="cta-button">Explorar Pacotes</a>
+    </section>
+
+    <section class="packages">
+        <div class="package-card">
+            <h3>Básico</h3>
+            <p>€500/mês</p>
+            <ul class="features">
+                <li>Campanha única</li>
+                <li>Relatórios simples</li>
+                <li>Suporte por e-mail</li>
+            </ul>
+            <a href="#" class="cta-button">Escolher</a>
+        </div>
+
+        <div class="package-card">
+            <h3>Avançado</h3>
+            <p>€1.000/mês</p>
+            <ul class="features">
+                <li>Até 3 campanhas</li>
+                <li>Consultoria quinzenal</li>
+                <li>Relatórios detalhados</li>
+            </ul>
+            <a href="#" class="cta-button">Escolher</a>
+        </div>
+
+        <div class="package-card">
+            <h3>Premium</h3>
+            <p>€2.000/mês</p>
+            <ul class="features">
+                <li>Campanhas ilimitadas</li>
+                <li>Consultoria semanal</li>
+                <li>Relatórios premium</li>
+            </ul>
+            <a href="#" class="cta-button">Escolher</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Pacotes Futuristas | Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
